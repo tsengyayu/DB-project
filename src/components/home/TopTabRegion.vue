@@ -36,7 +36,7 @@ const selectedTabIndex = ref(0);
 
 const isContentEditShow = inject("isContentEditShow");
 
-const tabNames = ["首頁", "個人簡介", " 購物車", "登出"];
+const tabNames = ["首頁", "個人簡介", " 購物車", "登出","Intro.","show product","Add Product","Customer Order","Industry Forum","Statistic Chart"];
 
 function onTabSelected(index) {
   selectedTabIndex.value = index;

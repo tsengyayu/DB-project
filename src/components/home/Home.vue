@@ -1,5 +1,6 @@
 <template>
   <div id="home-root">
+    <!-- todo要加店家首頁 -->
 
     <TopTabRegion class="top-tab-region" @on-tab-selected="onTabSelected" />
     <div class="content-region">
@@ -14,6 +15,30 @@
       />
       <logSystem
         v-show="selectedTabIndex == 3"
+        @on-tab-selected="subTabSelected"
+      />
+      <showProduct
+        v-show="selectedTabIndex == 5"
+        @on-tab-selected="subTabSelected"
+      />
+      <addProduct
+        v-show="selectedTabIndex == 6"
+        @on-tab-selected="subTabSelected"
+      />
+      <customerOrder
+        v-show="selectedTabIndex == 7"
+        @on-tab-selected="subTabSelected"
+      />
+      <IndustryForum
+        v-show="selectedTabIndex == 8"
+        @on-tab-selected="subTabSelected"
+      />
+      <statisticChart
+        v-show="selectedTabIndex == 9"
+        @on-tab-selected="subTabSelected"
+      />
+      <Intro
+        v-show="selectedTabIndex == 4"
         @on-tab-selected="subTabSelected"
       />
     </div>
@@ -39,9 +64,16 @@
 <script setup>
 import logSystem from "@/components/home/logSystem.vue";
 import TopTabRegion from "@/components/home/TopTabRegion.vue";
-import allReview from "@/components/home/TabContent/storeReview/allReview.vue";
-import cart from "@/components/home/TabContent/cart.vue";
-import customerIntro from "@/components/home/TabContent/customerIntro.vue";
+import allReview from "@/components/home/TabContent/customer/storeReview/allReview.vue";
+import oneReview from "@/components/home/TabContent/customer/storeReview/oneReview.vue";
+import cart from "@/components/home/TabContent/customer/cart.vue";
+import showProduct from "@/components/home/TabContent/store/showProduct.vue";
+import addProduct from "@/components/home/TabContent/store/addProduct.vue";
+import customerOrder from "@/components/home/TabContent/store/customerOrder.vue";
+import Intro from "@/components/home/TabContent/store/Intro.vue";
+import statisticChart from "@/components/home/TabContent/store/statisticChart.vue";
+import IndustryForum from "@/components/home/TabContent/store/IndustryForum.vue";
+import customerIntro from "@/components/home/TabContent/customer/customerIntro.vue";
 
 
 import { ref, onMounted, provide } from "vue";
